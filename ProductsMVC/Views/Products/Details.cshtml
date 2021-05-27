@@ -1,0 +1,27 @@
+﻿
+<h1>Products</h1>
+
+@{
+    var p = (Product)ViewData["p"];
+    // Layout = "_Layout1";
+}
+<body style=" background-color: oldlace">
+    <table class=" table">
+        <thead class="thead-dark ">
+            <tr>
+                <th scope="col">Product Id </th>
+                <th scope="col">Product Name </th>
+                <th scope="col">Product Price </th>
+                <th scope="col">Product Image</th>
+
+            </tr>
+        </thead>
+        <tr class="alert-dark">
+            <td>@p.id  </td>
+            <td>@p.name</td>
+            <td>@p.price</td>
+            <td><img src=" @p.image" /></td>
+
+        </tr>
+    </table>
+</body>

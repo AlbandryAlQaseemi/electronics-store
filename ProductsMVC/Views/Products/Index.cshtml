@@ -1,0 +1,55 @@
+﻿
+<h1>Products</h1>
+
+@{
+    var IList = (List<Product>)ViewData["IList"];
+    var color = ViewData["color"];
+
+
+}
+<style type="text/css">
+    .grey {
+        background-color: grey;
+    }
+
+    .moccasin {
+        background-color: moccasin;
+    }
+
+    .lavender {
+        background-color: lavender;
+    }
+
+   
+</style>
+<body style=" background-color: oldlace">
+    <div><b>Table Products</b><br /></div>
+    <table class=" table" style="background-color:@color">
+        <thead class="thead-dark ">
+            <tr>
+                <th scope="col">Product Id </th>
+                <th scope="col">Product Name </th>
+                <th scope="col">Product Price </th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Show</th>
+
+            </tr>
+        </thead>
+        @foreach (var product in IList)
+        {
+
+            <tr  class="alert-dark" >
+                <td> @product.id </td>
+                <td>@product.name</td>
+                <td>@product.price</td>
+                <td><img src="@product.image" alt="" /></td>
+                <td><button class="btn btn-secondary"><a href="/Products/Details/@product.id" style="color:whitesmoke">Show</button></td>
+
+
+            </tr>
+
+        }
+
+    </table>
+
+    </body>
